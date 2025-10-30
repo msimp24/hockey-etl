@@ -1,0 +1,10 @@
+2025-10-30 19:32:33,043 INFO: Data loaded successfully. 1311 rows written.
+2025-10-30 21:11:49,919 ERROR: An error occurred while loading data: 'tuple' object has no attribute 'to_sql'
+2025-10-30 21:13:45,590 ERROR: An error occurred while loading data: 'tuple' object has no attribute 'to_sql'
+2025-10-30 21:14:18,387 INFO: Data loaded successfully. 1311 rows written.
+2025-10-30 21:15:14,537 INFO: Data loaded successfully. 1311 rows written.
+2025-10-30 21:23:50,484 INFO: Data loaded successfully. 32 rows written.
+2025-10-30 21:49:13,263 ERROR: An error occurred while loading data: 'function' object has no attribute 'to_sql'
+2025-10-30 21:49:37,117 ERROR: An error occurred while loading data: database is locked
+2025-10-30 21:49:48,617 INFO: Data loaded successfully. 778 rows written.
+2025-10-30 21:56:07,882 INFO: Data loaded successfully. 69 rows written.

@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from extract import extract_data 
+from scripts.extract import extract_matchup_data, extract_standings_data, extract_player_stats
 
 nhl_teams = {
     1: "Anaheim Ducks",
@@ -40,6 +40,8 @@ nhl_teams = {
 
 nhl_team_ids = {v: k for k, v in nhl_teams.items()}
 
+
+#matchups transform
 def update_headers(df):
   new_headers = ['Game_Number', 'Date','Time', 'Visitor', 'Visitor_Goals', 'Home', 'Home_Goals', 'Extra_Time', 'Attendance', 'Game_Duration', 'Completed']
   df = df.set_axis(new_headers, axis=1)
@@ -50,9 +52,9 @@ def add_week_column(df):
   df['Week_Number'] = ((pd.to_datetime(df['Date']) - season_start).dt.days // 7) + 1
   return df
 
-def format_dataframe(df):
-    df["Home"] = df["Home"].map(nhl_team_ids).astype("Int64")
-    df["Visitor"] = df["Visitor"].map(nhl_team_ids).astype("Int64")  
+def add_team_ids(df):
+    df["Home_Id"] = df["Home"].map(nhl_team_ids).astype("Int64")
+    df["Visitor_Id"] = df["Visitor"].map(nhl_team_ids).astype("Int64")  
     
     return df
   
@@ -67,23 +69,34 @@ def remove_whitespace(df):
     True
 )
   return df
-  
 
-def transform():
+
+## Transforming Standing Data Frame
+
+
+def transform_matchups():
   url = 'https://www.hockey-reference.com/leagues/NHL_2026_games.html'
-  df = extract_data(url)
+  df = extract_matchup_data(url)
   df = update_headers(df)  
-  df = format_dataframe(df)
   df = remove_whitespace(df)
   df = add_week_column(df)
-  
-  print(df['Week_Number'].head())
+  df = add_team_ids(df)
   
   return df
-  
-  
-if __name__ == "__main__":
-  transform()  
 
+def transform_standings():
+  url = 'https://www.hockey-reference.com/leagues/NHL_2026_standings.html'
+  df = extract_standings_data(url)
+  return df
+  
+def transform_player_stats():
+  url = 'https://www.hockey-reference.com/leagues/NHL_2026_skaters.html'
+  df = extract_player_stats(url)
+  return df
+
+def transform_goalie_stats():
+  url = 'https://www.hockey-reference.com/leagues/NHL_2026_goalies.html'
+  df = extract_player_stats(url)
+  return df
 
 

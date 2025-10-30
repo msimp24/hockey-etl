@@ -1,9 +1,9 @@
 from pathlib import Path
 import logging
-from transform import transform
+from scripts.transform import transform_goalie_stats
 import sqlite3
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 DB_PATH = BASE_DIR / 'data' / 'hockey-data.db'
 
@@ -20,37 +20,11 @@ logging.basicConfig(
 logger = logging.getLogger()
 
 def loadData():
-    df = transform()
+    df = transform_goalie_stats()
     try:
         DB_PATH.parent.mkdir(parents=True, exist_ok=True)  
         with sqlite3.connect(DB_PATH) as conn:
-
-            cursor = conn.cursor()
-        
-        for _, row in df.iterrows():
-
-            cursor.execute("""UPDATE matchups
-        SET Visitor_Goals = ?,
-            Home_Goals = ?,
-            Extra_Time = ?,
-            Attendance = ?,
-            Game_Duration = ?,
-            Completed = ?
-        WHERE Game_Number = ?
-            """, (
-        row["Visitor_Goals"],
-        row["Home_Goals"],
-        row["Extra_Time"],
-        row["Attendance"],
-        row["Game_Duration"],
-        row["Completed"],
-        row["Game_Number"]))
-            
-            
-
-        conn.commit()
-        conn.close()
-            
+            df.to_sql(con=conn, name="goalies", if_exists='replace')
             
         logger.info(f"Data loaded successfully. {len(df)} rows written.")
     except Exception as e:

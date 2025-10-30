@@ -1,0 +1,26 @@
+{
+  "name": "hockey-etl",
+  "version": "1.0.0",
+  "description": "Hockey Stays API",
+  "keywords": [
+    "Project",
+    "Practice",
+    "ETL",
+    "API"
+  ],
+  "homepage": "https://github.com/msimp24/hockey-etl#readme",
+  "bugs": {
+    "url": "https://github.com/msimp24/hockey-etl/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msimp24/hockey-etl.git"
+  },
+  "license": "MIT",
+  "author": "Mark Simpson",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
