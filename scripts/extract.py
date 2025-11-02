@@ -4,6 +4,7 @@ import pandas as pd
 
 def extract_matchup_data(url):
   req = requests.get(url)
+  req.encoding = 'utf-8'
   req_html = req.text
   soup = BeautifulSoup(req_html, 'html.parser')
   filtered_trs = soup.select('tr:not(.thead):not(:first-child)')

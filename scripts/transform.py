@@ -1,45 +1,88 @@
 import pandas as pd
 import numpy as np
+import unicodedata
+
+
+
 from scripts.extract import extract_matchup_data, extract_standings_data, extract_player_stats
 
 nhl_teams = {
     1: "Anaheim Ducks",
-    2: "Arizona Coyotes",
-    3: "Boston Bruins",
-    4: "Buffalo Sabres",
-    5: "Calgary Flames",
-    6: "Carolina Hurricanes",
-    7: "Chicago Blackhawks",
-    8: "Colorado Avalanche",
-    9: "Columbus Blue Jackets",
-    10: "Dallas Stars",
-    11: "Detroit Red Wings",
-    12: "Edmonton Oilers",
-    13: "Florida Panthers",
-    14: "Los Angeles Kings",
-    15: "Minnesota Wild",
-    16: "Montreal Canadiens",
-    17: "Nashville Predators",
-    18: "New Jersey Devils",
-    19: "New York Islanders",
-    20: "New York Rangers",
-    21: "Ottawa Senators",
-    22: "Philadelphia Flyers",
-    23: "Pittsburgh Penguins",
-    24: "San Jose Sharks",
-    25: "Seattle Kraken",
-    26: "St. Louis Blues",
-    27: "Tampa Bay Lightning",
-    28: "Toronto Maple Leafs",
-    29: "Utah Mammoth",
-    30: "Vancouver Canucks",
-    31: "Vegas Golden Knights",
-    32: "Washington Capitals",
-    33: "Winnipeg Jets"
+    2: "Boston Bruins",
+    3: "Buffalo Sabres",
+    4: "Calgary Flames",
+    5: "Carolina Hurricanes",
+    6: "Chicago Blackhawks",
+    7: "Colorado Avalanche",
+    8: "Columbus Blue Jackets",
+    9: "Dallas Stars",
+    10: "Detroit Red Wings",
+    11: "Edmonton Oilers",
+    12: "Florida Panthers",
+    13: "Los Angeles Kings",
+    14: "Minnesota Wild",
+    15: "Montreal Canadiens",
+    16: "Nashville Predators",
+    17: "New Jersey Devils",
+    18: "New York Islanders",
+    19: "New York Rangers",
+    20: "Ottawa Senators",
+    21: "Philadelphia Flyers",
+    22: "Pittsburgh Penguins",
+    23: "San Jose Sharks",
+    24: "Seattle Kraken",
+    25: "St. Louis Blues",
+    26: "Tampa Bay Lightning",
+    27: "Toronto Maple Leafs",
+    28: "Utah Mammoth",
+    29: "Vancouver Canucks",
+    30: "Vegas Golden Knights",
+    31: "Washington Capitals",
+    32: "Winnipeg Jets"
 }
 
 nhl_team_ids = {v: k for k, v in nhl_teams.items()}
 
+
+
+nhl_abbrs = {
+    "ANA": 1,
+    "BOS": 2,
+    "BUF": 3,
+    "CGY": 4,
+    "CAR": 5,
+    "CHI": 6,
+    "COL": 7,
+    "CBJ": 8,
+    "DAL": 9,
+    "DET": 10,
+    "EDM": 11,
+    "FLA": 12,
+    "LAK": 13,
+    "MIN": 14,
+    "MTL": 15,
+    "NSH": 16,
+    "NJD": 17,
+    "NYI": 18,
+    "NYR": 19,
+    "OTT": 20,
+    "PHI": 21,
+    "PIT": 22,
+    "SJS": 23,
+    "SEA": 24,
+    "STL": 25,
+    "TBL": 26,
+    "TOR": 27,
+    "UTA": 28,
+    "VAN": 29,
+    "VEG": 30,
+    "WSH": 31,
+    "WPG": 32
+}
+
+
+def normalize_text(text):
+    return unicodedata.normalize('NFC', text)
 
 #matchups transform
 def update_headers(df):
@@ -70,6 +113,19 @@ def remove_whitespace(df):
 )
   return df
 
+#functions for players/goalies
+
+def add_team_id(df):
+  df["team_id"] = df["team_name_abbr"].map(nhl_abbrs).astype("Int64")
+  df['name_disply'] = df['name_display'].apply(normalize_text)
+  
+  return df
+
+def add_numeric_columns(df):
+  df = df.apply(pd.to_numeric, errors='ignore')
+  return df
+
+
 
 ## Transforming Standing Data Frame
 
@@ -92,11 +148,19 @@ def transform_standings():
 def transform_player_stats():
   url = 'https://www.hockey-reference.com/leagues/NHL_2026_skaters.html'
   df = extract_player_stats(url)
+  df = add_team_id(df)
+  df = add_numeric_columns(df)
   return df
 
 def transform_goalie_stats():
   url = 'https://www.hockey-reference.com/leagues/NHL_2026_goalies.html'
   df = extract_player_stats(url)
+  df = add_team_id(df)
+  df = add_numeric_columns(df)
+  
+
   return df
 
-
+if __name__ =="__main__":
+  transform_player_stats()
+  

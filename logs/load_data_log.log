@@ -8,3 +8,31 @@
 2025-10-30 21:49:37,117 ERROR: An error occurred while loading data: database is locked
 2025-10-30 21:49:48,617 INFO: Data loaded successfully. 778 rows written.
 2025-10-30 21:56:07,882 INFO: Data loaded successfully. 69 rows written.
+2025-11-01 21:48:11,469 INFO: Data loaded successfully. 1311 rows written.
+2025-11-01 21:49:34,026 INFO: Data loaded successfully. 784 rows written.
+2025-11-01 21:49:42,194 INFO: Data loaded successfully. 69 rows written.
+2025-11-01 21:49:48,850 INFO: Data loaded successfully. 32 rows written.
+2025-11-01 21:58:05,812 INFO: Data loaded successfully. 1311 rows written.
+2025-11-01 22:19:46,381 ERROR: An error occurred while loading data: 'NoneType' object has no attribute 'to_sql'
+2025-11-01 22:20:41,674 INFO: Data loaded successfully. 784 rows written.
+2025-11-01 22:21:16,744 INFO: Data loaded successfully. 784 rows written.
+2025-11-01 22:21:34,169 INFO: Data loaded successfully. 784 rows written.
+2025-11-01 22:23:15,782 INFO: Data loaded successfully. 784 rows written.
+2025-11-01 22:29:52,353 INFO: Data loaded successfully. 784 rows written.
+2025-11-01 22:30:14,988 INFO: Data loaded successfully. 784 rows written.
+2025-11-01 22:30:48,830 INFO: Data loaded successfully. 784 rows written.
+2025-11-01 23:32:55,852 INFO: Data loaded successfully. 69 rows written.
+2025-11-01 23:33:02,756 INFO: Data loaded successfully. 784 rows written.
+2025-11-01 23:33:17,768 INFO: Data loaded successfully. 784 rows written.
+2025-11-01 23:33:21,026 INFO: Data loaded successfully. 69 rows written.
+2025-11-02 13:05:39,312 INFO: Data loaded successfully. 793 rows written.
+2025-11-02 13:06:37,866 INFO: Data loaded successfully. 793 rows written.
+2025-11-02 13:08:53,248 INFO: Data loaded successfully. 71 rows written.
+2025-11-02 17:41:50,186 INFO: Data loaded successfully. 793 rows written.
+2025-11-02 17:41:52,696 INFO: Data loaded successfully. 71 rows written.
+2025-11-02 17:42:39,109 INFO: Data loaded successfully. 71 rows written.
+2025-11-02 17:42:41,450 INFO: Data loaded successfully. 793 rows written.
+2025-11-02 19:18:48,896 INFO: Data loaded successfully. 793 rows written.
+2025-11-02 19:18:51,746 INFO: Data loaded successfully. 71 rows written.
+2025-11-02 19:22:57,711 INFO: Data loaded successfully. 71 rows written.
+2025-11-02 19:23:02,738 INFO: Data loaded successfully. 793 rows written.

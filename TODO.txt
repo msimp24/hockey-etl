@@ -1,0 +1,9 @@
+Endpoint	Purpose
+/players	List all players with stats
+/players/<player_id>	Detailed stats for a single player
+/goalies	List all goalies with stats
+/goalies/<goalie_id>	Goalie details
+/teams	Team summary stats
+/matchups	List of games for a week/season
+/standings	Division and conference standings
+/leaderboards	Top scorers, assist leaders, goalie save %, etc.
