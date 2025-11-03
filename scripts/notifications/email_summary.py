@@ -53,8 +53,7 @@ def send_email():
         "html": email_body,
     }
 
-    email = resend.Emails.send(params)
-    print(email)
+    resend.Emails.send(params)
 
 if __name__ == "__main__":
     send_email()        

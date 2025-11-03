@@ -124,11 +124,16 @@ def add_numeric_columns(df):
 
 
 
-## Transforming Standing Data Frame
+## Transforming Standings Data Frame
 
 def add_team_ids_standings(df):
     df["team_id"] = df["team_name"].map(nhl_team_ids).astype("Int64")   
     return df
+  
+def add_conference(df):
+  df['Conference'] = df['Division'].apply(lambda x: 'eastern' if x == 'atlantic' or x =='metropolitan' else 'western')  
+
+  return df
 
 
 def transform_matchups():
@@ -146,6 +151,7 @@ def transform_standings():
   url = 'https://www.hockey-reference.com/leagues/NHL_2026_standings.html'
   df = extract_standings_data(url)
   df = add_team_ids_standings(df)
+  df = add_conference(df)
   return df
   
 def transform_player_stats():
