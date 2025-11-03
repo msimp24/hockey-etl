@@ -1,8 +1,5 @@
 import pandas as pd
 import numpy as np
-import unicodedata
-
-
 
 from scripts.extract import extract_matchup_data, extract_standings_data, extract_player_stats
 
@@ -43,8 +40,6 @@ nhl_teams = {
 
 nhl_team_ids = {v: k for k, v in nhl_teams.items()}
 
-
-
 nhl_abbrs = {
     "ANA": 1,
     "BOS": 2,
@@ -81,8 +76,6 @@ nhl_abbrs = {
 }
 
 
-def normalize_text(text):
-    return unicodedata.normalize('NFC', text)
 
 #matchups transform
 def update_headers(df):
@@ -93,6 +86,7 @@ def update_headers(df):
 def add_week_column(df):
   season_start = pd.to_datetime("2025-10-06")
   df['Week_Number'] = ((pd.to_datetime(df['Date']) - season_start).dt.days // 7) + 1
+  
   return df
 
 def add_team_ids(df):
@@ -113,11 +107,14 @@ def remove_whitespace(df):
 )
   return df
 
+def fill_na(df):
+  df['Extra_Time'] = df['Extra_Time'].fillna('Reg.')
+  return df
+
 #functions for players/goalies
 
 def add_team_id(df):
   df["team_id"] = df["team_name_abbr"].map(nhl_abbrs).astype("Int64")
-  df['name_disply'] = df['name_display'].apply(normalize_text)
   
   return df
 
@@ -129,6 +126,10 @@ def add_numeric_columns(df):
 
 ## Transforming Standing Data Frame
 
+def add_team_ids_standings(df):
+    df["team_id"] = df["team_name"].map(nhl_team_ids).astype("Int64")   
+    return df
+
 
 def transform_matchups():
   url = 'https://www.hockey-reference.com/leagues/NHL_2026_games.html'
@@ -137,12 +138,14 @@ def transform_matchups():
   df = remove_whitespace(df)
   df = add_week_column(df)
   df = add_team_ids(df)
+  df = fill_na(df)
   
   return df
 
 def transform_standings():
   url = 'https://www.hockey-reference.com/leagues/NHL_2026_standings.html'
   df = extract_standings_data(url)
+  df = add_team_ids_standings(df)
   return df
   
 def transform_player_stats():
@@ -158,7 +161,6 @@ def transform_goalie_stats():
   df = add_team_id(df)
   df = add_numeric_columns(df)
   
-
   return df
 
 if __name__ =="__main__":

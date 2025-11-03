@@ -69,10 +69,10 @@ def extract_standings_data(url):
     
     df = pd.DataFrame.from_dict(cleaned_data)
     df['Division'] = None
-    df.loc[:7, 'Division'] = divisions[0]
-    df.loc[8:15, 'Division'] = divisions[1]
-    df.loc[16:23, 'Division'] = divisions[2]
-    df.loc[24:31, 'Division'] = divisions[3]
+    df.loc[:7, 'Division'] = divisions[0][:-9]
+    df.loc[8:15, 'Division'] = divisions[1][:-9]
+    df.loc[16:23, 'Division'] = divisions[2][:-9]
+    df.loc[24:31, 'Division'] = divisions[3][:-9]
     
   return df
   
