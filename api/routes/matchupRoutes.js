@@ -1,24 +1,14 @@
 const express = require('express')
+const {
+  getAllMatchups,
+  getMatchupsByTeamId,
+  getMatchupsByWeek,
+} = require('../controllers/matchupController')
 const router = express.Router()
 
-const getAllMatchups = (req, res) => {
-  const sql = 'select * from matchups'
+router.route('/').get(getAllMatchups)
 
-  db.all(sql, (err, rows) => {
-    if (err) {
-      return res.status(500).json({
-        status: 'failed',
-        error: err,
-      })
-    }
+router.route('/team/:id').get(getMatchupsByTeamId)
 
-    if (row.length == 0) {
-      return res.status(404).json({
-        status: 'failed',
-        error: '',
-      })
-    }
-  })
-}
-
+router.route('/week/:week').get(getMatchupsByWeek)
 module.exports = router

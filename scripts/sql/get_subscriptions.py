@@ -1,7 +1,8 @@
 from pathlib import Path
 import logging
-from scripts.transform import transform_matchups
 import sqlite3
+import pandas as pd
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
@@ -19,17 +20,26 @@ logging.basicConfig(
 )
 logger = logging.getLogger()
 
-def loadData():
-    df = transform_matchups()
+
+def get_subscriptions_data():
     try:
-        DB_PATH.parent.mkdir(parents=True, exist_ok=True)  
-        with sqlite3.connect(DB_PATH) as conn:
-            df.to_sql(con=conn, name="matchups", if_exists='replace')
+        DB_PATH.parent.mkdir(parents=True, exist_ok=True) 
         
-        logger.info(f"Data loaded successfully. {len(df)} rows written.")
+        conn = sqlite3.connect(DB_PATH)
+        cursor = conn.cursor() 
+        
+        res = cursor.execute("SELECT * FROM subscriptions")
+        
+        subscriptions = res.fetchall()
+        
+        conn.close()
+        
+        logger.info(f"Data loaded successfully. {len(subscriptions)} rows written.")
+        
+        return subscriptions
     except Exception as e:
         logger.error(f"An error occurred while loading data: {e}")
         
-
+        
 if __name__ == "__main__":
-    loadData()        
+    get_subscriptions_data()      

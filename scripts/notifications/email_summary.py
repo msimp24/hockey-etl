@@ -5,15 +5,18 @@ from dotenv import load_dotenv
 
 from scripts.transform import transform_matchups
 from scripts.ai.game_summaries import get_game_descriptions
+from scripts.sql.get_subscriptions import get_subscriptions_data
+
 
 load_dotenv()
-
 api_key = os.environ.get('RESEND_API_KEY')
+current_url = os.environ.get('CURRENT_URL')
 
 if not api_key:
     raise ValueError("RESEND_API_KEY not set in environment variables")
 
 resend.api_key = api_key
+
 
 def send_email():
 
@@ -36,24 +39,31 @@ def send_email():
         game_descriptions_html += f"<p>Game {index+1}: {desc}</p>\n"
 
 
-    email_body = f"""
-    <html>
-    <body>
-        <p>Here are today's matchups:</p>
-        {html_table}
-        <br><br>
-        {game_descriptions_html}
-    </body>
-    </html>
-    """
-    params: resend.Emails.SendParams = {
-        "from": "Test <noreply@mark-simpson.com>",
-        "to": ["mark.simpson4@gmail.com"],
-        "subject": "Hockey results",
-        "html": email_body,
-    }
+    subs = get_subscriptions_data() 
+    for sub in subs:
+        email_body = f"""
+        <html>
+        <body>
+            <h1>Hi {sub[1]} {sub[2]}</h1>
+            <br><br>
+            <p>Here the results from yesterday's matchups</p>
+            {html_table}
+            <br><br>
+            {game_descriptions_html}
+            <br><br><br>
+            <a href="{current_url}/email/delete-sub/{sub[3]}">Click here to unsubscribe</a>
+        </body>
+        </html>
+        """
+            
+        params: resend.Emails.SendParams = {
+            "from": "Hockey Data <noreply@mark-simpson.com>",
+            "to": [sub[3]],
+            "subject": "Hockey results",
+            "html": email_body,
+        }
 
-    resend.Emails.send(params)
+        resend.Emails.send(params)
 
 if __name__ == "__main__":
     send_email()        

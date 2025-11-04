@@ -1,80 +1,41 @@
-2025-11-02 22:43:06,878 INFO: Data loaded successfully. 71 rows written.
-2025-11-02 22:43:07,170 INFO: Data loaded successfully. 1311 rows written.
-2025-11-02 22:43:07,673 INFO: Data loaded successfully. 793 rows written.
-2025-11-02 22:43:07,823 INFO: Data loaded successfully. 32 rows written.
-2025-11-02 22:43:36,015 INFO: Data loaded successfully. 71 rows written.
-2025-11-02 22:43:36,301 INFO: Data loaded successfully. 1311 rows written.
-2025-11-02 22:43:36,784 INFO: Data loaded successfully. 793 rows written.
-2025-11-02 22:43:36,903 INFO: Data loaded successfully. 32 rows written.
-2025-11-02 22:43:44,525 INFO: Data loaded successfully. 71 rows written.
-2025-11-02 22:43:44,816 INFO: Data loaded successfully. 1311 rows written.
-2025-11-02 22:43:45,326 INFO: Data loaded successfully. 793 rows written.
-2025-11-02 22:43:45,453 INFO: Data loaded successfully. 32 rows written.
-2025-11-02 22:45:13,740 INFO: Data loaded successfully. 71 rows written.
-2025-11-02 22:45:14,042 INFO: Data loaded successfully. 1311 rows written.
-2025-11-02 22:45:14,539 INFO: Data loaded successfully. 793 rows written.
-2025-11-02 22:45:14,719 INFO: Data loaded successfully. 32 rows written.
-2025-11-02 22:52:25,058 INFO: Data loaded successfully. 71 rows written.
-2025-11-02 22:52:25,412 INFO: Data loaded successfully. 1311 rows written.
-2025-11-02 22:52:25,901 INFO: Data loaded successfully. 793 rows written.
-2025-11-02 22:52:26,023 INFO: Data loaded successfully. 32 rows written.
-2025-11-02 22:54:38,127 INFO: Data loaded successfully. 71 rows written.
-2025-11-02 22:54:38,462 INFO: Data loaded successfully. 1311 rows written.
-2025-11-02 22:54:38,991 INFO: Data loaded successfully. 793 rows written.
-2025-11-02 22:54:39,135 INFO: Data loaded successfully. 32 rows written.
-2025-11-02 22:55:17,117 INFO: Data loaded successfully. 71 rows written.
-2025-11-02 22:55:17,445 INFO: Data loaded successfully. 1311 rows written.
-2025-11-02 22:55:17,922 INFO: Data loaded successfully. 793 rows written.
-2025-11-02 22:55:18,089 INFO: Data loaded successfully. 32 rows written.
-2025-11-02 22:56:58,612 INFO: Data loaded successfully. 71 rows written.
-2025-11-02 22:56:58,902 INFO: Data loaded successfully. 1311 rows written.
-2025-11-02 22:56:59,378 INFO: Data loaded successfully. 793 rows written.
-2025-11-02 22:56:59,487 INFO: Data loaded successfully. 32 rows written.
-2025-11-03 00:19:44,082 INFO: Data loaded successfully. 71 rows written.
-2025-11-03 00:19:44,361 INFO: Data loaded successfully. 1311 rows written.
-2025-11-03 00:19:44,880 INFO: Data loaded successfully. 793 rows written.
-2025-11-03 00:19:44,998 INFO: Data loaded successfully. 32 rows written.
-2025-11-03 00:19:46,771 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
-2025-11-03 00:19:47,634 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
-2025-11-03 00:19:48,500 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
-2025-11-03 00:19:49,733 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
-2025-11-03 00:19:50,957 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
-2025-11-03 00:26:21,630 INFO: Data loaded successfully. 71 rows written.
-2025-11-03 00:26:21,961 INFO: Data loaded successfully. 1311 rows written.
-2025-11-03 00:26:22,464 INFO: Data loaded successfully. 793 rows written.
-2025-11-03 00:26:22,581 INFO: Data loaded successfully. 32 rows written.
-2025-11-03 00:26:25,204 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
-2025-11-03 00:26:26,095 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
-2025-11-03 00:26:27,070 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
-2025-11-03 00:26:28,069 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
-2025-11-03 00:26:28,892 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
-2025-11-03 12:32:11,950 INFO: Data loaded successfully. 71 rows written.
-2025-11-03 12:32:12,273 INFO: Data loaded successfully. 1311 rows written.
-2025-11-03 12:32:12,893 INFO: Data loaded successfully. 794 rows written.
-2025-11-03 12:32:13,139 INFO: Data loaded successfully. 32 rows written.
-2025-11-03 12:32:15,616 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
-2025-11-03 12:32:17,866 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
-2025-11-03 12:32:19,653 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
-2025-11-03 12:32:21,817 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
-2025-11-03 12:32:25,465 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
-2025-11-03 12:34:44,520 INFO: Data loaded successfully. 71 rows written.
-2025-11-03 12:34:44,833 INFO: Data loaded successfully. 1311 rows written.
-2025-11-03 12:34:45,329 INFO: Data loaded successfully. 794 rows written.
-2025-11-03 12:34:45,452 INFO: Data loaded successfully. 32 rows written.
-2025-11-03 12:34:47,385 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
-2025-11-03 12:34:48,854 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
-2025-11-03 12:34:50,036 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
-2025-11-03 12:34:51,091 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
-2025-11-03 12:34:52,231 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
-2025-11-03 12:57:31,379 INFO: Data loaded successfully. 71 rows written.
-2025-11-03 12:57:31,695 INFO: Data loaded successfully. 1311 rows written.
-2025-11-03 12:57:32,183 INFO: Data loaded successfully. 794 rows written.
-2025-11-03 12:57:32,301 INFO: Data loaded successfully. 32 rows written.
-2025-11-03 13:03:18,918 INFO: Data loaded successfully. 71 rows written.
-2025-11-03 13:03:19,226 INFO: Data loaded successfully. 1311 rows written.
-2025-11-03 13:03:19,721 INFO: Data loaded successfully. 794 rows written.
-2025-11-03 13:03:19,860 INFO: Data loaded successfully. 32 rows written.
-2025-11-03 14:53:42,198 INFO: Data loaded successfully. 71 rows written.
-2025-11-03 14:53:42,682 INFO: Data loaded successfully. 1311 rows written.
-2025-11-03 14:53:43,289 INFO: Data loaded successfully. 794 rows written.
-2025-11-03 14:53:43,530 INFO: Data loaded successfully. 32 rows written.
+2025-11-04 15:39:56,665 INFO: Data loaded successfully. 2 rows written.
+2025-11-04 15:43:52,120 INFO: Data loaded successfully. 2 rows written.
+2025-11-04 15:47:57,483 INFO: Data loaded successfully. 71 rows written.
+2025-11-04 15:47:57,841 INFO: Data loaded successfully. 1311 rows written.
+2025-11-04 15:47:58,364 INFO: Data loaded successfully. 795 rows written.
+2025-11-04 15:47:58,545 INFO: Data loaded successfully. 32 rows written.
+2025-11-04 15:48:02,220 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-04 15:48:03,855 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-04 15:48:06,722 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-04 15:48:09,227 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-04 15:48:09,237 INFO: Data loaded successfully. 2 rows written.
+2025-11-04 15:50:01,488 INFO: Data loaded successfully. 2 rows written.
+2025-11-04 15:50:01,488 ERROR: An error occurred while loading data: 'DataFrame' object has no attribute 'to_list'
+2025-11-04 15:50:15,226 INFO: Data loaded successfully. 2 rows written.
+2025-11-04 15:50:30,607 INFO: Data loaded successfully. 71 rows written.
+2025-11-04 15:50:30,921 INFO: Data loaded successfully. 1311 rows written.
+2025-11-04 15:50:31,512 INFO: Data loaded successfully. 795 rows written.
+2025-11-04 15:50:31,627 INFO: Data loaded successfully. 32 rows written.
+2025-11-04 15:50:35,103 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-04 15:50:37,147 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-04 15:50:38,584 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-04 15:50:41,656 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-04 15:50:41,665 INFO: Data loaded successfully. 2 rows written.
+2025-11-04 15:56:46,860 INFO: Data loaded successfully. 71 rows written.
+2025-11-04 15:56:47,217 INFO: Data loaded successfully. 1311 rows written.
+2025-11-04 15:56:47,792 INFO: Data loaded successfully. 795 rows written.
+2025-11-04 15:56:47,962 INFO: Data loaded successfully. 32 rows written.
+2025-11-04 15:56:49,855 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-04 15:56:51,623 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-04 15:56:52,599 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-04 15:56:54,357 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-04 15:56:54,367 INFO: Data loaded successfully. 2 rows written.
+2025-11-04 16:01:28,563 INFO: Data loaded successfully. 71 rows written.
+2025-11-04 16:01:28,898 INFO: Data loaded successfully. 1311 rows written.
+2025-11-04 16:01:29,421 INFO: Data loaded successfully. 795 rows written.
+2025-11-04 16:01:29,613 INFO: Data loaded successfully. 32 rows written.
+2025-11-04 16:01:31,666 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-04 16:01:32,884 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-04 16:01:34,314 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-04 16:01:36,056 INFO: HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2025-11-04 16:01:36,064 INFO: Data loaded successfully. 2 rows written.
