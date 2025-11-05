@@ -3,10 +3,19 @@ import logging
 from scripts.transform import transform_goalie_stats
 import sqlite3
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+ENV_DB_PATH = os.environ.get('DB_PATH')
+
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
-DB_PATH = BASE_DIR / 'data' / 'hockey-data.db'
-
+if ENV_DB_PATH and Path(ENV_DB_PATH).is_absolute():
+    DB_PATH = Path(ENV_DB_PATH)
+else:
+    DB_PATH = BASE_DIR / ENV_DB_PATH
+    
 LOG_FILE = BASE_DIR / 'logs' /'load_data_log.log'
 
 LOG_FILE.parent.mkdir(exist_ok=True)

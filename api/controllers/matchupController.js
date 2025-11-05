@@ -69,8 +69,34 @@ const getMatchupsByWeek = (req, res) => {
   })
 }
 
+const getTodaysMatchups = (req, res) => {
+  const date = new Date()
+
+  const formatted = date.toISOString().split('T')[0]
+
+  const sql = 'select * from matchups where Date = ?'
+
+  db.all(sql, [formatted], (err, rows) => {
+    if (err) {
+      return res.status(500).json({
+        status: 'failed',
+        message: err,
+      })
+    }
+
+    if (rows.length == 0) {
+      return res.status(404).json({
+        status: 'failed',
+        message: 'No matchups found on that day',
+      })
+    }
+    return res.status(200).send(rows)
+  })
+}
+
 module.exports = {
   getAllMatchups,
   getMatchupsByTeamId,
   getMatchupsByWeek,
+  getTodaysMatchups,
 }
