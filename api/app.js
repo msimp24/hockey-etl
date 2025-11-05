@@ -12,12 +12,14 @@ const playerRoutes = require('./routes/playerRoutes')
 const standingsRoutes = require('./routes/standingsRoutes')
 const matchupRoutes = require('./routes/matchupRoutes')
 const emailRoutes = require('./routes/emailRoutes')
+const teamRoutes = require('./routes/teamRoutes')
 
 app.use('/goalies', goalieRoutes)
 app.use('/players', playerRoutes)
 app.use('/standings', standingsRoutes)
 app.use('/matchups', matchupRoutes)
 app.use('/email', emailRoutes)
+app.use('/teams', teamRoutes)
 
 const filePath = path.join(__dirname, 'views')
 

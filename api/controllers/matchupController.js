@@ -94,6 +94,8 @@ const getTodaysMatchups = (req, res) => {
   })
 }
 
+const getMatchupsByDay = (req, res) => {}
+
 module.exports = {
   getAllMatchups,
   getMatchupsByTeamId,
