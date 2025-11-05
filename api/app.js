@@ -22,15 +22,11 @@ app.use('/email', emailRoutes)
 const filePath = path.join(__dirname, 'views')
 
 app.get('/', (req, res) => {
-  res.sendFile(filePath + '/welcome.html', (err) => {
-    console.log('Error loading HTML file')
-  })
+  res.sendFile(filePath + '/welcome.html')
 })
 
 app.get('/email', (req, res) => {
-  res.sendFile(filePath + '/email-sub.html', (err) => {
-    console.log('Error loading HTML file')
-  })
+  res.sendFile(filePath + '/email-sub.html')
 })
 
 module.exports = app
