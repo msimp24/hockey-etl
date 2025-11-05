@@ -1,7 +1,19 @@
 const sqlite3 = require('sqlite3')
 const path = require('path')
+require('dotenv').config({
+  path: path.resolve(__dirname, '../../.env'),
+})
 
-const dbPath = path.join(__dirname, '../../data/hockey-data.db')
+const ENV_DB_PATH = process.env.DB_PATH
+let dbPath
+
+if (path.isAbsolute(ENV_DB_PATH)) {
+  dbPath = ENV_DB_PATH
+  console.log('PROD')
+} else {
+  dbPath = path.join(__dirname, ENV_DB_PATH)
+  console.log('DEV')
+}
 
 let db = new sqlite3.Database(dbPath, (err) => {
   if (err) {
