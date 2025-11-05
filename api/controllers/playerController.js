@@ -5,10 +5,14 @@ const getAllPlayers = (req, res) => {
 
   db.all(sql, (err, rows) => {
     if (err) {
+      console.error('Database Query Failed:', err.message, err.code)
       return res.status(500).send({
         status: 'failed',
-        message: err,
+        error_code: err.code, // e.g., 'SQLITE_ERROR'
+        error_number: err.errno, // e.g., 1 (the generic code)
+        message: 'Database query failed: ' + err.message,
       })
+      // --- END IMPROVED ERROR HANDLING ---
     }
     return res.status(200).send(rows)
   })

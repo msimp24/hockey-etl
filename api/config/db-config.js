@@ -9,6 +9,7 @@ let dbPath
 
 if (path.isAbsolute(ENV_DB_PATH)) {
   dbPath = ENV_DB_PATH
+  console.log(dbPath)
   console.log('PROD')
 } else {
   dbPath = path.join(__dirname, ENV_DB_PATH)

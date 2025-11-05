@@ -17,4 +17,8 @@ app.use('/standings', standingsRoutes)
 app.use('/matchups', matchupRoutes)
 app.use('/email', emailRoutes)
 
+app.get('/', (req, res) => {
+  res.send('Welcome to my hockey stats API')
+})
+
 module.exports = app
