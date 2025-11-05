@@ -1,184 +1,296 @@
-NHL ETL
-Hockey ETL API that scrapes NHL data, transforms the data and loads it into a database.
+🏒 Hockey Stats API Reference
 
-The API provides routing for players, goalies, standings and matchups as well as a daily email newsletter for emails subscribed with results from the day before.
+This document provides a comprehensive reference for all endpoints available in the Hockey Stats API. All requests are served over HTTPS. The ETL process scrapes NHL data, transforms it, and loads it into the database daily at 6 AM.
 
-|Production https://hockey-stats-api.duckdns.org
-Local (Development) http://localhost:8888
+🌐 Live Documentation & Postman Collection
 
-Players
-API endpoints that returns details of players in the NHL
+For the most up-to-date and interactive documentation, including example responses and the ability to Fork the collection directly, please visit our https://documenter.getpostman.com/view/27229859/2sB3Wqv12F
+
+Base URL
+
+Component
+
+Value
+
+Production
+
+https://hockey-stats-api.duckdns.org
+
+Local (Development)
+
+http://localhost:8888
+
+🥅 Player Statistics Endpoints
+
+Retrieves details and stats for NHL players.
+
+Method
+
+Path
+
+Description
+
+Example Path
 
 GET
-Get all players
+
 /players/all
-Returns all players in the NHL and their stats
 
-Query Params
-GET
-Get player by player name
-/players/player?name=sidney crosby
-Return players by name
+Returns all players in the NHL and their statistics.
 
-Query Params
-name
-sidney crosby
+/players/all
+
 GET
-Top point getters
+
+/players/player
+
+Search for players by name.
+
+/players/player?name=sidney%20crosby
+
+GET
+
+/players/top-point-getters
+
+Returns top point getters. Default limit is 10.
+
 /players/top-point-getters?limit=2
-Returns top point getters
 
-Use limit to filter the amount of players, default is 10
-
-Query Params
-limit
-2
 GET
-Filter By Team
+
+/players/team/:team_id
+
+Returns all players on a team specified by its ID.
+
 /players/team/1
-Returns players based on their team_id
-
-GET /players/team/1
 
 GET
-Top Goals
+
+/players/top-goals
+
+Returns top goal scorers. Default limit is 10.
+
 /players/top-goals?limit=5
-Returns top goal scores
 
-Use limit to filter the amount of players, default is 10
+Query Parameters:
+| Parameter | Endpoints | Description | Example |
+| :--- | :--- | :--- | :--- |
+| name | /players/player | The name or partial name of the player. | sidney crosby |
+| limit | /players/top-point-getters, /players/top-goals | Use to filter the amount of players returned (default 10). | 2 |
 
-GET /players/top-goals
+🧤 Goalie Statistics Endpoints
 
-Query Params
-limit
-5
-Goalies
-API endpoints that returns details/stats of goalies in the NHL
+Retrieves details and statistics for NHL goalies.
+
+Method
+
+Path
+
+Description
+
+Example Path
 
 GET
-Get all Goalies
+
 /goalies/all
-Returns all goalies
 
-Query Params
+Returns all goalies and their statistics.
+
+/goalies/all
+
 GET
-Get goalies by name
+
+/goalies/goalie
+
+Search for goalies by name.
+
 /goalies/goalie?name=dustin
-Returns goalies by query name
 
-Query Params
-name
-dustin
 GET
-Get top save perctages
+
+/goalies/top-save-percentage
+
+Returns goalies sorted by top save percentage.
+
 /goalies/top-save-percentage?limit=5
-Returns goalies by save percentage
 
-Query Params
-limit
-5
 GET
-Get goalies by team id
+
+/goalies/get-goalies-by-team/:team_id
+
+Returns all goalies from a team by their ID.
+
 /goalies/get-goalies-by-team/6
-Returns all goalies from a team by their ID
 
 GET
-Get top goalies by win
+
+/goalies/top-goalie-wins
+
+Returns top goalies by win count.
+
 /goalies/top-goalie-wins?limit=4
 
-Query Params
-limit
-4
-Standings
-Endpoints of league standings
+Query Parameters:
+| Parameter | Endpoints | Description | Example |
+| :--- | :--- | :--- | :--- |
+| name | /goalies/goalie | The name or partial name of the goalie. | dustin |
+| limit | /goalies/top-save-percentage, /goalies/top-goalie-wins | Use to filter the amount of goalies returned (default 10). | 5 |
+
+📊 Standings Endpoints
+
+Retrieves league and division standings.
+
+Method
+
+Path
+
+Description
+
+Example Path
 
 GET
-Get League Standings
+
 /standings
-Returns the standings of all teams together
+
+Returns the standings of all teams together (league-wide).
+
+/standings
 
 GET
-Get Division Standings
+
+/standings/division/:division_name
+
+Get standings by division name.
+
 /standings/division/central
-Get division by division name
-
-Divisions are : metropolitan, atlantic, pacific, and central
 
 GET
-Get Conference Standings
+
+/standings/conference/:conference_name
+
+Returns conference standings.
+
 /standings/conference/eastern
-Returns conference standings
 
-eastern or western
+Path Parameters:
 
-Matchups
-NHL schedule and results data
+:division_name: metropolitan, atlantic, pacific, or central.
+
+:conference_name: eastern or western.
+
+⚔️ Matchups & Schedule Endpoints
+
+Retrieves NHL schedule and results data.
+
+Method
+
+Path
+
+Description
+
+Example Path
 
 GET
-Get All Matchups
+
 /matchups
-Returns all NHL matchups
 
-Query Params
-Home
-Toronto
-Away
-Ottawa
+Returns all NHL matchups. Can be filtered by home and away query params.
+
+/matchups?home=Toronto&away=Ottawa
+
 GET
-Get matchups by week
+
+/matchups/week/:week_number
+
+Returns matchups by week number (1-26).
+
 /matchups/week/26
-Returns matchups by week number
-
-Weeks 1-26
 
 GET
-Get Matchups by day
+
 /matchups/today
-Get todays matchup
+
+Get today's matchups.
+
+/matchups/today
 
 GET
-Get matchups by Id
-/matchups/team/2
-Get matchup by team id
-returns all home and away games
 
-Email Newsletter
-Return daily scores from the day before at 6am
+/matchups/team/:team_id
+
+Get matchups by team ID; returns all home and away games.
+
+/matchups/team/2
+
+📧 Email Subscription & Newsletter Endpoints
+
+Manages user subscriptions and access to mailing list data.
+
+Method
+
+Path
+
+Description
+
+Example Path
 
 POST
-Add new email
+
 /email/add-subscription
-Adds a new user to the email newsletter
 
-Body
-raw (json)
-json
-{
-"first_name":"Mark",
-"last_name":"Simpson",
-"email":"mark.simpson4@gmail.com"
-}
+Adds a new user to the daily email newsletter list.
+
+/email/add-subscription
+
 GET
-Get all email subscriptions
+
 /email/get-subs
-Returns all email subscriptions
+
+Returns all email subscriptions (for administrative use).
+
+/email/get-subs
 
 GET
-Unsubscribe from mailing list
+
+/email/delete-sub/:email
+
+Unsubscribe a user from the mailing list. The parameter is the user's email.
+
 /email/delete-sub/mark.simpson4@gmail.com
-Unsubscribe from the mail list
 
-param is email of user that wants to unsubscribe
+Request Body (POST /email/add-subscription):
+The body must be sent as JSON:
 
-Teams
-NHL teams data
+{
+"first_name": "Mark",
+"last_name": "Simpson",
+"email": "mark.simpson4@gmail.com"
+}
+
+🏒 Team Data Endpoints
+
+Retrieves basic NHL team information.
+
+Method
+
+Path
+
+Description
+
+Example Path
 
 GET
-Get all teams
+
 /teams/all
-Returns all the teams and their IDs
+
+Returns all the NHL teams and their corresponding IDs.
+
+/teams/all
 
 GET
-Return team by id
+
+/teams/:team_id
+
+Returns a specific team by its ID.
+
 /teams/1
-Returns a team but their Id
