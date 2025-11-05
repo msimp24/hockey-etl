@@ -9,8 +9,7 @@ from dotenv import load_dotenv
 load_dotenv()
 ENV_DB_PATH = os.environ.get('DB_PATH')
 
-
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+BASE_DIR = Path(__file__).resolve().parent
 
 if ENV_DB_PATH and Path(ENV_DB_PATH).is_absolute():
     DB_PATH = Path(ENV_DB_PATH)
@@ -44,6 +43,7 @@ def get_subscriptions_data():
         conn.close()
         
         logger.info(f"Data loaded successfully. {len(subscriptions)} rows written.")
+        print('hello')
         print(subscriptions)
         return subscriptions
     except Exception as e:
