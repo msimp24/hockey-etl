@@ -11,6 +11,8 @@ ENV_DB_PATH = os.environ.get('DB_PATH')
 
 BASE_DIR = Path(__file__).resolve().parent
 
+print(BASE_DIR)
+
 if ENV_DB_PATH and Path(ENV_DB_PATH).is_absolute():
     DB_PATH = Path(ENV_DB_PATH)
 else:

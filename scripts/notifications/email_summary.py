@@ -1,6 +1,7 @@
 import os
 import resend
 import datetime
+import time
 from dotenv import load_dotenv
 
 from scripts.transform import transform_matchups
@@ -64,6 +65,7 @@ def send_email():
         }
 
         resend.Emails.send(params)
+        time.sleep(0.6)
 
 if __name__ == "__main__":
     send_email()        
