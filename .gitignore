@@ -1,5 +1,15 @@
-node_modules
-venv
-data/hockey-data.db
+
+# Node.js dependencies
+node_modules/
+
+# Python virtual environment
+venv/
+
+# Environment variables
 .env
 
+# SQLite database
+data/hockey-data.db
+data/hockey-data.db-wal
+data/hockey-data.db-shm
+data/*.db*
