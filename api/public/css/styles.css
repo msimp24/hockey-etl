@@ -178,3 +178,19 @@ body {
   cursor: pointer;
   color: var(--color-error);
 }
+
+.hero-header {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.hero-header h1 {
+  font-size: var(--font-size-xxl);
+  color: var(--accent-color);
+}
+
+.hero-header p {
+  font-size: var(--font-size-lg);
+  line-height: 40px;
+  color: var(--primary-white);
+}
