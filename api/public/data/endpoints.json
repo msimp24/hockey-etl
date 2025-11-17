@@ -1,0 +1,191 @@
+[
+  {
+    "category": "players",
+    "endpoints": [
+      {
+        "title": "Get all players",
+        "method": "GET",
+        "endpoint": "/players/all",
+        "description": "Returns all players in the NHL and their stats"
+      },
+      {
+        "title": "Get player by name",
+        "method": "GET",
+        "endpoint": "/players/player?name=sidney%20crosby",
+        "description": "Return players by name",
+        "queryParams": {
+          "name": "sidney crosby"
+        }
+      },
+      {
+        "title": "Top point getters",
+        "method": "GET",
+        "endpoint": "/players/top-point-getters?limit=2",
+        "description": "Returns top point getters. Use limit to filter the amount of players, default is 10",
+        "queryParams": {
+          "limit": 2
+        }
+      },
+      {
+        "title": "Filter by team",
+        "method": "GET",
+        "endpoint": "/players/team/1",
+        "description": "Returns players based on their team_id"
+      },
+      {
+        "title": "Top goals",
+        "method": "GET",
+        "endpoint": "/players/top-goals?limit=5",
+        "description": "Returns top goal scorers. Use limit to filter the amount of players, default is 10",
+        "queryParams": {
+          "limit": 5
+        }
+      }
+    ]
+  },
+  {
+    "category": "goalies",
+    "endpoints": [
+      {
+        "title": "Get all goalies",
+        "method": "GET",
+        "endpoint": "/goalies/all",
+        "description": "Returns all goalies"
+      },
+      {
+        "title": "Get goalies by name",
+        "method": "GET",
+        "endpoint": "/goalies/goalie?name=dustin",
+        "description": "Returns goalies by query name",
+        "queryParams": {
+          "name": "dustin"
+        }
+      },
+      {
+        "title": "Get top save percentages",
+        "method": "GET",
+        "endpoint": "/goalies/top-save-percentage?limit=5",
+        "description": "Returns goalies by save percentage",
+        "queryParams": {
+          "limit": 5
+        }
+      },
+      {
+        "title": "Get goalies by team id",
+        "method": "GET",
+        "endpoint": "/goalies/get-goalies-by-team/6",
+        "description": "Returns all goalies from a team by their ID"
+      },
+      {
+        "title": "Get top goalies by win",
+        "method": "GET",
+        "endpoint": "/goalies/top-goalie-wins?limit=4",
+        "description": "Returns top goalies by wins",
+        "queryParams": {
+          "limit": 4
+        }
+      }
+    ]
+  },
+  {
+    "category": "standings",
+    "endpoints": [
+      {
+        "title": "Get league standings",
+        "method": "GET",
+        "endpoint": "/standings",
+        "description": "Returns the standings of all teams together"
+      },
+      {
+        "title": "Get division standings",
+        "method": "GET",
+        "endpoint": "/standings/division/central",
+        "description": "Get division by division name. Divisions are: metropolitan, atlantic, pacific, central"
+      },
+      {
+        "title": "Get conference standings",
+        "method": "GET",
+        "endpoint": "/standings/conference/eastern",
+        "description": "Returns conference standings. Options: eastern or western"
+      }
+    ]
+  },
+  {
+    "category": "matchups",
+    "endpoints": [
+      {
+        "title": "Get all matchups",
+        "method": "GET",
+        "endpoint": "/matchups?home=Toronto&away=Ottawa",
+        "description": "Returns all NHL matchups",
+        "queryParams": {
+          "home": "Toronto",
+          "away": "Ottawa"
+        }
+      },
+      {
+        "title": "Get matchups by week",
+        "method": "GET",
+        "endpoint": "/matchups/week/26",
+        "description": "Returns matchups by week number (weeks 1-26)"
+      },
+      {
+        "title": "Get matchups by day",
+        "method": "GET",
+        "endpoint": "/matchups/today",
+        "description": "Get today's matchups"
+      },
+      {
+        "title": "Get matchups by team id",
+        "method": "GET",
+        "endpoint": "/matchups/team/2",
+        "description": "Get matchup by team id. Returns all home and away games"
+      }
+    ]
+  },
+  {
+    "category": "email newsletter",
+    "endpoints": [
+      {
+        "title": "Add new email",
+        "method": "POST",
+        "endpoint": "/email/add-subscription",
+        "description": "Adds a new user to the email newsletter",
+        "body": {
+          "first_name": "Mark",
+          "last_name": "Simpson",
+          "email": "mark.simpson4@gmail.com"
+        }
+      },
+      {
+        "title": "Get all email subscriptions",
+        "method": "GET",
+        "endpoint": "/email/get-subs",
+        "description": "Returns all email subscriptions"
+      },
+      {
+        "title": "Unsubscribe from mailing list",
+        "method": "GET",
+        "endpoint": "/email/delete-sub/mark.simpson4@gmail.com",
+        "description": "Unsubscribe from the mailing list. Param is the email of the user who wants to unsubscribe"
+      }
+    ]
+  },
+  {
+    "category": "teams",
+    "endpoints": [
+      {
+        "title": "Get all teams",
+        "method": "GET",
+        "endpoint": "/teams/all",
+        "description": "Returns all the teams and their IDs"
+      },
+      {
+        "title": "Get team by id",
+        "method": "GET",
+        "endpoint": "/teams/1",
+        "description": "Returns a team by their ID"
+      }
+    ]
+  }
+]

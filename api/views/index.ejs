@@ -1,0 +1,97 @@
+<div class="container">
+  <section class="home-section">
+    <h1>Players</h1>
+    <div class="home-grid">
+      <% players.forEach((player) =>{%>
+      <div class="api-card">
+        <div class="top-row">
+          <h3><%-player.title %></h3>
+          <div class="request-type"><%- player.method%></div>
+        </div>
+        <p class="api-desc"><%- player.description%></p>
+        <a
+          href="https://hockey-stats-api.duckdns.org<%-player.endpoint %>"
+          class="api-link"
+          ><%-player.endpoint %></a
+        >
+      </div>
+      <%})%>
+    </div>
+  </section>
+  <section class="home-section">
+    <h1>Goalies</h1>
+    <div class="home-grid">
+      <% goalies.forEach((goalie) =>{%>
+      <div class="api-card">
+        <div class="top-row">
+          <h3><%-goalie.title %></h3>
+          <div class="request-type"><%- goalie.method%></div>
+        </div>
+        <p class="api-desc"><%- goalie.description%></p>
+        <a
+          href="https://hockey-stats-api.duckdns.org<%-goalie.endpoint %>"
+          class="api-link"
+          ><%-goalie.endpoint %></a
+        >
+      </div>
+      <%})%>
+    </div>
+  </section>
+  <section class="home-section">
+    <h1>Standings</h1>
+    <div class="home-grid">
+      <% standings.forEach((standing) =>{%>
+      <div class="api-card">
+        <div class="top-row">
+          <h3><%-standing.title %></h3>
+          <div class="request-type"><%- standing.method%></div>
+        </div>
+        <p class="api-desc"><%- standing.description%></p>
+        <a
+          href="https://hockey-stats-api.duckdns.org<%-standing.endpoint %>"
+          class="api-link"
+          ><%-standing.endpoint %></a
+        >
+      </div>
+      <%})%>
+    </div>
+  </section>
+  <section class="home-section">
+    <h1>Matchups</h1>
+    <div class="home-grid">
+      <% matchups.forEach((matchup) =>{%>
+      <div class="api-card">
+        <div class="top-row">
+          <h3><%-matchup.title %></h3>
+          <div class="request-type"><%- matchup.method%></div>
+        </div>
+        <p class="api-desc"><%- matchup.description%></p>
+        <a
+          href="https://hockey-stats-api.duckdns.org<%-matchup.endpoint %>"
+          class="api-link"
+          ><%-matchup.endpoint %></a
+        >
+      </div>
+      <%})%>
+    </div>
+  </section>
+  <section class="home-section">
+    <h1>Teams</h1>
+    <div class="home-grid">
+      <% teams.forEach((team) =>{%>
+      <div class="api-card">
+        <div class="top-row">
+          <h3><%-team.title %></h3>
+          <div class="request-type"><%- team.method%></div>
+        </div>
+        <p class="api-desc"><%- team.description%></p>
+        <a
+          href="https://hockey-stats-api.duckdns.org<%-team.endpoint %>"
+          class="api-link"
+          ><%-team.endpoint %></a
+        >
+      </div>
+      <%})%>
+    </div>
+  </section>
+</div>

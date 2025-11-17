@@ -28,4 +28,5 @@ def get_game_descriptions(df):
       )
       results_list.append(response.output_text)
       
+      
   return results_list    

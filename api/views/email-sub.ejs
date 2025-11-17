@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Subscription</title>
+    <style></style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Subscribe to Hockey Stats Updates</h1>
+
+      <form action="/email/add-subscription" method="POST">
+        <label for="first_name">First Name</label>
+        <input required type="text" id="first_name" name="first_name" />
+
+        <label for="last_name">Last Name</label>
+        <input required type="text" id="last_name" name="last_name" />
+
+        <label for="email">Email</label>
+        <input type="email" required id="email" name="email" />
+
+        <button type="submit">Subscribe</button>
+      </form>
+
+      <p>You'll receive daily updates on hockey scores</p>
+    </div>
+  </body>
+</html>

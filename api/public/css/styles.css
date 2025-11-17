@@ -1,0 +1,180 @@
+:root {
+  /* ==================== Colors ==================== */
+  --primary-dark: #131720;
+  --secondary-dark: #1f242e;
+  --ternary-dark: #2b303c;
+  --primary-white: #f8fafc;
+  --accent-color: #2794f3;
+  --accent-color-two: #1a3c5a;
+
+  /* Functional Colors */
+  --color-success: #28a745;
+  --color-error: #dc3545;
+  --color-warning: #ffc107;
+  --color-info: #17a2b8;
+
+  /* Text Colors */
+  --text-color-light: #acb1b7;
+
+  /* ==================== Typography ==================== */
+  --font-family: 'Montserrat', sans-serif;
+
+  /* Font Sizes */
+  --font-size-xs: 8px;
+  --font-size-sm: 16px;
+  --font-size-md: 24px;
+  --font-size-lg: 32px;
+  --font-size-xl: 40px;
+  --font-size-xxl: 48px;
+
+  /* Font Weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 600;
+  --font-weight-bold: 800;
+
+  /* Line Height */
+  --line-height-base: 1.5;
+
+  /* ==================== Spacing & Layouts ==================== */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+  --spacing-xl: 64px;
+  --spacing-2xl: 128px;
+
+  /* ==================== Borders & Shadows ==================== */
+  --border-color: #ddd;
+  --border-width: 1px;
+  --border-style: solid;
+  --border-radius: 4px;
+  --border-radius-sm: 2px;
+  --border-radius-lg: 8px;
+
+  --box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  /* ==================== Transitions ==================== */
+  --transition-speed-fast: 0.15s;
+  --transition-speed-normal: 0.3s;
+  --transition-ease: ease-in-out;
+
+  /* ==================== Z-Index ==================== */
+  --z-index-dropdown: 1000;
+  --z-index-fixed: 1010;
+  --z-index-modal: 1050;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--primary-dark);
+  color: var(--primary-white);
+}
+
+.nav {
+  padding: var(--spacing-lg) 0;
+  border-bottom: var(--ternary-dark) 1px solid;
+}
+
+.container {
+  max-width: 1400px;
+  width: 90%;
+  margin: 0 auto;
+}
+.logo {
+  font-size: var(--font-size-xl);
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: var(--font-weight-bold);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+.logo > span {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.nav-list ul li {
+  list-style-type: none;
+}
+.nav-list ul li a {
+  text-decoration: none;
+  border: var(--accent-color) 1px solid;
+  padding: var(--spacing-sm) var(--spacing-md);
+  color: var(--accent-color);
+  font-size: var(--font-size-md);
+  border-radius: var(--border-radius-lg);
+  transition: 0.2s ease-in-out;
+}
+.nav-list ul li a:hover {
+  color: var(--primary-white);
+  background-color: var(--accent-color);
+}
+
+.home-section {
+  margin: var(--spacing-lg) auto;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.api-card {
+  border: var(--ternary-dark) 1px solid;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  background-color: var(--secondary-dark);
+  transition: 0.2s ease-in-out;
+}
+.api-card:hover {
+  border: 1px solid var(--accent-color);
+}
+
+.api-card .top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+.request-type {
+  background-color: var(--accent-color-two);
+  border: var(--accent-color) solid 1px;
+  color: var(--accent-color);
+  border-radius: 9999px;
+  padding: var(--spacing-xs) 14px;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+}
+
+.api-desc {
+  color: var(--text-color-light);
+}
+
+.home-section h1 {
+  color: var(--accent-color);
+  text-transform: capitalize;
+}
+.api-link {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-lg);
+  border: none;
+  background-color: var(--ternary-dark);
+  color: var(--accent-color);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  text-decoration: none;
+}
+.api-link:hover {
+  cursor: pointer;
+  color: var(--color-error);
+}

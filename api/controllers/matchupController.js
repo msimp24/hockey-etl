@@ -1,7 +1,7 @@
 const db = require('../config/db-config')
 
 const getAllMatchups = (req, res) => {
-  const sql = 'select * from matchups where '
+  const sql = 'select * from matchups'
   db.all(sql, (err, rows) => {
     if (err) {
       return res.status(500).json({
