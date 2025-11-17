@@ -116,7 +116,7 @@
       {
         "title": "Get all matchups",
         "method": "GET",
-        "endpoint": "/matchups?home=Toronto&away=Ottawa",
+        "endpoint": "/matchups",
         "description": "Returns all NHL matchups",
         "queryParams": {
           "home": "Toronto",
