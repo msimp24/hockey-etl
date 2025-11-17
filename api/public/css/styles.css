@@ -185,12 +185,12 @@ body {
   flex-direction: column;
 }
 .hero-header h1 {
-  font-size: var(--font-size-xxl);
+  font-size: var(--font-size-xl);
   color: var(--accent-color);
 }
 
 .hero-header p {
   font-size: var(--font-size-lg);
   line-height: 40px;
-  color: var(--primary-white);
+  color: var(--accent-color);
 }
